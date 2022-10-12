@@ -1,0 +1,48 @@
+class Main {
+
+public static void main(String[] args) {
+
+Scanner in = new Scanner(System.in);
+double x, xmin, xmax, dx, eps;
+System.out.println("Input x:");
+x = in.nextDouble();
+
+System.out.println("Input xmin:");
+xmin = in.nextDouble();
+
+System.out.println("Input xmax:");
+xmax = in.nextDouble();
+
+System.out.println("Input dx:");
+dx = in.nextDouble();
+
+System.out.println("Input eps:");
+eps = in.nextDouble();
+
+
+bool done = true;
+
+double ch = x, y = ch;
+
+for (int n = 0; Math.abs(ch) > eps; n++)
+{
+ch *= 1 - (4 * x) + 9 * pow(x, 2) - 16 * pow(x, 3) + 25 * pow(x, 4) - 36 * pow(x, 5); //член ряда  1-
+4x+9x^2-16x^3+25x^4-36^x5
+
+y += ch;
+
+if (n > xmax) {
+
+System.out.Println("\nРяд Расходится!");
+
+done = false; break;
+}
+}
+
+
+
+
+in.close();
+
+}
+}`
